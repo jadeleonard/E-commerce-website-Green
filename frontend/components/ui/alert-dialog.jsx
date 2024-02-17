@@ -15,9 +15,11 @@ const AlertDialogPortal = AlertDialogPrimitive.Portal
 const AlertDialogOverlay = React.forwardRef(({ className, ...props }, ref) => (
   <AlertDialogPrimitive.Overlay
     className={cn(
-      "fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0",
+      "fixed inset-0 z-50 opacity-100 bg-cover bg-center data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-1",
       className
     )}
+    {...props}
+    style={{ backgroundImage: "url('https://live.staticflickr.com/2428/3858512421_586359e8ae_b.jpg')" }} // Inline style for background image
     {...props}
     ref={ref} />
 ))

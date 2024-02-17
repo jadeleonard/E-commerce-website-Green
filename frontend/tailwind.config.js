@@ -15,6 +15,9 @@ module.exports = {
       screens: {
         "2xl": "1400px",
       },
+      backgroundImages:{
+          'url':'url(https://www.bhmpics.com/downloads/nba-team-logo/7.1112642.jpg)'
+      },
     },
     extend: {
       colors: {
