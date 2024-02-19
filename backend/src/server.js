@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const port = process.env.DATA_SEND;
+const port = process.env.DATA_URL;
 const { PrismaClient } = require("@prisma/client");
 const cache = require('memory-cache');
 
