@@ -13,7 +13,8 @@
 
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "nodemon src/server.js",
-    "build": "mkdir api && xcopy /s /e .\\backend\\* .\\api\\ && copy .\\backend\\src\\server.js .\\api\\src\\"
+
+    "vercel-build":"npm run server"
 
   },
   "author": "",
