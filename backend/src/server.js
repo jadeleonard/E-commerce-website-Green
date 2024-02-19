@@ -7,12 +7,12 @@ const cache = require('memory-cache');
 const prisma = new PrismaClient();
 
 // Define routes before adding caching middleware
-app.get('https://e-commerce-website-green-six.vercel.app/', (req, res) => {
+app.get('/', (req, res) => {
     res.send('Hello World!');
 });
 
 // Caching middleware should only apply to specific routes
-app.use("https://e-commerce-website-green-six.vercel.app/api", (req, res, next) => {
+app.use("/api", (req, res, next) => {
     const key = '__express__' + req.originalUrl || req.url;
     const cachedBody = cache.get(key);
     if (cachedBody) {
@@ -29,7 +29,7 @@ app.use("https://e-commerce-website-green-six.vercel.app/api", (req, res, next) 
 });
 
 // Route to fetch data from Prisma and cache the response
-app.get("https://e-commerce-website-green-six.vercel.app/api/navbar", async (req, res) => {
+app.get("/api/navbar", async (req, res) => {
     try {
         const response = await prisma.navbar.findMany();
         if (response) {
