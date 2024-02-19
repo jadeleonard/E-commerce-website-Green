@@ -9,14 +9,14 @@ const navbar =[
 ]
 const Navbar = () => {
   return (
-    <div className='flex items-center justify-between py-2 px-4'>
+    <div className='flex items-center justify-between py-2 px-4 bg-gradient-to-t from-blue-400 to-blue-600'>
     <div className='mx-auto'>
 
 
 
         <img src=''width={125} height={40} alt='logot' />
     </div>
-    <ul className='hidden sm:inline-flex gap-4 mx-auto'>
+    <ul className='hidden sm:inline-flex gap-4 mx-auto text-zinc-100'>
         {
             navbar.map((items) =>(
                 <li key={items.id}>
@@ -27,7 +27,7 @@ const Navbar = () => {
             ))
         }
     </ul>
-    
+   
     </div>
   )
 }
