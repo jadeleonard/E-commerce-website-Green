@@ -4,13 +4,20 @@ const port = process.env.PORT
 const { PrismaClient } = require("@prisma/client");
 const cache = require('memory-cache');
 
+
+
+
+
+
+
+const dotenv = require('dotenv'); 
 const prisma = new PrismaClient();
 
 // Define routes before adding caching middleware
 app.get('/', (req, res) => {
     res.send('Hello World!');
 });
-
+dotenv.config(); 
 // Caching middleware should only apply to specific routes
 app.use("/api", (req, res, next) => {
     const key = '__express__' + req.originalUrl || req.url;
